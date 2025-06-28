@@ -5,7 +5,7 @@ import { FlatList } from 'react-native'
 import ListItem from '../components/ListItem'
 import generateFakeNews from '../data/fake-news'
 
-const AllNews = () => {
+const AllNews = ({navigation}) => {
     const news = generateFakeNews(50);
     return (
 
@@ -13,7 +13,7 @@ const AllNews = () => {
             <FlatList
                 data={news}
                 keyExtractor={(item) => item.id}
-                renderItem={(iter) => <ListItem {...iter.item} />}
+                renderItem={(iter) => <ListItem {...iter.item} navigation={navigation}/>}
             />
         </SafeAreaView>
 

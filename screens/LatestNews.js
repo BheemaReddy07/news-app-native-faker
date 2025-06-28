@@ -4,15 +4,14 @@ import generateFakeNews from '../data/fake-news'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ListItem from '../components/ListItem';
 
-const LatestNews = () => {
+const LatestNews = ({navigation}) => {
     const news = generateFakeNews(4);
-    console.log(news)
     return (
         <SafeAreaView>
             <FlatList
                 data={news}
                 keyExtractor={(item) => item.id}
-                renderItem={(iter) => <ListItem {...iter.item} />}
+                renderItem={(iter) => <ListItem {...iter.item}  navigation={navigation} />}
             />
         </SafeAreaView>
     )
