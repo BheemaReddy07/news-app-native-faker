@@ -8,7 +8,7 @@ const generateFakeNews = (limit) =>{
         const content = faker.lorem.paragraph();
         const date = faker.date.past();
         const id = faker.string.uuid();
-        const image = faker.image.urlPicsumPhotos({width:200,height:100})
+        const image = `https://picsum.photos/seed/news${i}/800/400`;
         const author = faker.person.fullName();
         newsList.push({title,content,date,id,image,author});
     }
